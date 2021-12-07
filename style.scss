@@ -209,7 +209,7 @@
                             border: none;
                             border-radius: 3px;
                             background-color: rgb(29, 87, 212);
-                            color: rgb(0, 0, 0);
+                            color: rgb(214, 214, 214);
                             font-weight: bold;
                             width: 100px;
                             height: 40px;
@@ -273,12 +273,28 @@
                                     font-size: 18px;
                                     font-weight: bold;
                                 }
-    
-                                progress
-                                {
+
+
+                                .progress {
+                                    background: rgba(22, 26, 39, 0.7);
+                                    justify-content: flex-start;
+                                    border-radius: 2px;
+                                    align-items: center;
+                                    position: relative;
+                                    padding: 2px;
+                                    display: flex;
+                                    height: 8px;
                                     width: 90%;
-                                    height: 10px;
-                                }
+                                  }
+                                  
+                                  .progress-value {
+                                    box-shadow: 0 10px 0px -10px #fff;
+                                    border-radius: 2px;
+                                    background: rgb(29, 87, 212);
+                                    height: 8px;
+                                    width: 50%;
+                                  }
+                                  
         
                                 .amount
                                 {
