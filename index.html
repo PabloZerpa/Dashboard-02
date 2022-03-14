@@ -10,8 +10,13 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <nav>
-        <div class="logo"><i class="las la-dragon"></i></div>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn"><i class="las la-bars"></i></label>
+
+    <nav id="nav">
+
+        <div class="logo"><i class="las la-frog"></i></div>
 
         <div class="border"></div>
 
@@ -56,7 +61,7 @@
     
                     <div class="platform">
                         <div class="topPlatform">
-                            <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png" alt="">
+                            <img src="https://i.imgur.com/dEuCx4h.png" alt="">
                             <i class="las la-ellipsis-v"></i>
                         </div>
                         <div class="bottomPlatform">
@@ -70,11 +75,11 @@
     
                     <div class="platform">
                         <div class="topPlatform">
-                            <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" alt="">
+                            <img src="https://i.imgur.com/nbO0Oca.png" alt="">
                             <i class="las la-ellipsis-v"></i>
                         </div>
                         <div class="bottomPlatform">
-                            <span class="name">SpreedSheet</span>
+                            <span class="name">Images</span>
                             <div class="progress">
                                 <div class="progress-value"></div>
                             </div>
@@ -84,11 +89,11 @@
     
                     <div class="platform">
                         <div class="topPlatform">
-                            <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_power_point_office_logo_icon_145723.png" alt="">
+                            <img src="https://i.imgur.com/SOfzIjE.png" alt="">
                             <i class="las la-ellipsis-v"></i>
                         </div>
                         <div class="bottomPlatform">
-                            <span class="name">Presentations</span>
+                            <span class="name">Audios</span>
                             <div class="progress">
                                 <div class="progress-value"></div>
                             </div>
@@ -98,11 +103,11 @@
     
                     <div class="platform">
                         <div class="topPlatform">
-                            <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_onenote_logo_icon_145725.png" alt="">
+                            <img src="https://i.imgur.com/ZsnKreP.png" alt="">
                             <i class="las la-ellipsis-v"></i>
                         </div>
                         <div class="bottomPlatform">
-                            <span class="name">Notes</span>
+                            <span class="name">Videos</span>
                             <div class="progress">
                                 <div class="progress-value"></div>
                             </div>
@@ -161,22 +166,22 @@
                           <span>15/11/2021</span>
                           <span>1.2mb</span>
                         </div>
+                        
+                        <div class="underline"></div>
+                        <div class="row file">
+                            <span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Project_%282019%E2%80%93present%29.svg/1200px-Microsoft_Project_%282019%E2%80%93present%29.svg.png" alt="">
+                                <span class="nameFile">Proje File</span>
+                            </span>
+                            <span>15/11/2021</span>
+                            <span>1.2mb</span>
+                        </div>
 
                         <div class="underline"></div>
                         <div class="row file">
                             <span>
                                 <img src="https://admtransparencia.prodominicana.gob.do/Imagenes/Pdf.png" alt="">
-                                <span class="nameFile">PDF File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-                        
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://cdn.freelogovectors.net/wp-content/uploads/2021/09/adobe-photoshop-logo-freelogovectors.net_.png" alt="">
-                                <span class="nameFile">PSD File</span>
+                                <span class="nameFile">PDFs File</span>
                             </span>
                             <span>15/11/2021</span>
                             <span>1.2mb</span>
@@ -185,8 +190,8 @@
                         <div class="underline"></div>
                         <div class="row file">
                           <span>
-                              <img src="https://icons.iconarchive.com/icons/ncrow/mega-pack-1/256/Fruity-Loops-Studio-icon.png" alt="">
-                              <span class="nameFile">FLP File</span>
+                              <img src="https://i.imgur.com/YRfrPDM.png" alt="">
+                              <span class="nameFile">Audio File</span>
                           </span>
                           <span>15/11/2021</span>
                           <span>1.2mb</span>
@@ -195,8 +200,8 @@
                         <div class="underline"></div>
                         <div class="row file">
                             <span>
-                                <img src="https://admtransparencia.prodominicana.gob.do/Imagenes/Pdf.png" alt="">
-                                <span class="nameFile">PDF File</span>
+                                <img src="https://i.imgur.com/tXILn9K.png" alt="">
+                                <span class="nameFile">Image File</span>
                             </span>
                             <span>15/11/2021</span>
                             <span>1.2mb</span>
@@ -205,8 +210,8 @@
                         <div class="underline"></div>
                         <div class="row file">
                             <span>
-                                <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png" alt="">
-                                <span class="nameFile">Word File</span>
+                                <img src="https://i.imgur.com/yxgcXLa.png" alt="">
+                                <span class="nameFile">Video File</span>
                             </span>
                             <span>15/11/2021</span>
                             <span>1.2mb</span>
@@ -221,6 +226,31 @@
             <section class="details">
                 <h5 class="">Store Details</h5>
                 <canvas id="chartDonut" class="chartDonut"></canvas>
+
+                <div class="detailsFile">
+                    <div>
+                        <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png">
+                        <span style="color: rgb(0, 114, 242)">Documents</span>
+                    </div>
+                    <span class="total">300</span>
+                </div>
+
+                <div class="detailsFile">
+                    <div>
+                        <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png">
+                        <span style="color: rgb(24, 136, 57)">SpreedSheets</span>
+                    </div>
+                    <span class="total">50</span>
+                </div>
+
+                <div class="detailsFile">
+                    <div>
+                        <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_power_point_office_logo_icon_145723.png">
+                        <span style="color: rgb(255, 188, 1)">Presentations</span>
+                    </div>
+                    <span class="total">100</span>
+                </div>
+
             </section>
         </div>
 
