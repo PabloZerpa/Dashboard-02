@@ -1,3 +1,4 @@
 # Dashboard
 
 # Screenshot
+![](./dashboard.png)
