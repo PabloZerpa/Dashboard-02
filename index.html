@@ -5,255 +5,219 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="./style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Dashboard</title>
 </head>
-<body>
 
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn"><i class="las la-bars"></i></label>
+<body class="bg-zinc-900">
+    <header>
+        <!-------------------- NAVEGATION -------------------->
+        <input class="hidden" type="checkbox" id="check">
+        <label for="check" class="block text-4xl text-gray-300 cursor-pointer lg:hidden "><i class="las la-bars"></i></label>
 
-    <nav id="nav">
+        <div class="hidden lg:block" id="responsiveNav">
+            <nav class="flex flex-col gap-10 items-center fixed z-50 text-gray-400 bg-zinc-800 w-2/3 h-screen lg:w-1/6">
+    
+                <div class="text-6xl text-blue-600 font-bold pt-14 cursor-pointer"><i class="las la-frog hover:text-blue-700 hover:scale-110 duration-300"></i></div>
+                <div class="w-full h-0.5 bg-gray-300 opacity-50"></div>
+    
+                <ul> 
+                    <li class="hover:text-gray-300 duration-300 cursor-pointer my-5"><i class="las la-dice-d6 text-2xl mr-1"></i>Dashboard</li>
+                    <li class="hover:text-gray-300 duration-300  cursor-pointer my-5"><i class="las la-comment-dollar text-2xl mr-1"></i>Transaction</li>
+                    <li class="hover:text-gray-300 duration-300  cursor-pointer my-5"><i class="las la-clipboard-list text-2xl mr-1"></i>Task</li>
+                    <li class="hover:text-gray-300 duration-300  cursor-pointer my-5"><i class="las la-folder-open text-2xl mr-1"></i>Documents</li>
+                    <li class="hover:text-gray-300 duration-300  cursor-pointer my-5"><i class="las la-shopping-bag text-2xl mr-1"></i>Store</li>
+                    <li class="hover:text-gray-300 duration-300  cursor-pointer my-5"><i class="las la-bell text-2xl mr-1"></i>Notifications</li>
+                    <li class="hover:text-gray-300 duration-300  cursor-pointer my-5"><i class="las la-cog text-2xl mr-1"></i>Settings</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <div class="logo"><i class="las la-frog"></i></div>
-
-        <div class="border"></div>
-
-        <ul> 
-            <li><i class="las la-dice-d6"></i>Dashboard</li>
-            <li><i class="las la-comment-dollar"></i>Transaction</li>
-            <li><i class="las la-clipboard-list"></i>Task</li>
-            <li><i class="las la-folder-open"></i>Documents</li>
-            <li><i class="las la-shopping-bag"></i>Store</li>
-            <li><i class="las la-bell"></i>Notifications</li>
-            <li><i class="las la-cog"></i>Settings</li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="topSection">
-            <div class="title">
-                <h5 >Dashboard</h5>
+    <main class="lg:ml-60">
+        <!-------------------- TOP SECTION -------------------->
+        <section class="flex flex-row justify-center lg:justify-around">
+            <div class="hidden lg:flex text-2xl font-bold text-gray-300 mt-5 ">
+                <h5>Dashboard</h5>
             </div>
-            <div class="userSearchSection">
-                <div class="search">
-                    <input type="text" placeholder="Search">
-                    <button><i class="las la-search"></i></button>
+            <div class="flex flex-row justify-center gap-5 mt-5">
+                <div class="flex flex-row rounded-lg items-center bg-zinc-800 text-gray-400 font-bold w-56 h-8 p-5 lg:w-64">
+                    <input class="bg-zinc-800 border-0 outline-0 w-40 h-8 lg:w-44" type="text" placeholder="Search">
+                    <button class="border-0 rounded bg-blue-700 font-bold text-gray-900 h-7 w-7 hover:text-gray-300 
+                        hover:-translate-y-0.5 hover:scale-110 hover:bg-blue-600 duration-300"><i class="las la-search"></i></button>
                 </div>
-                <div class="user">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="">
-                    <span class="userName">Pablo</span>
-                    <i class="las la-angle-down"></i>
+                <div class="flex flex-row items-center text-gray-300 rounded bg-zinc-800 p-1.5 gap-2">
+                    <img class="w-7" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="">
+                    <span class="text-xl font-bold">Pablo</span>
+                    <i class="las la-angle-down font-bold cursor-pointer"></i>
                 </div>
             </div>
         </section>
 
-        <div class="centerSections">
+        <!-------------------- CENTER SECTION -------------------->
 
-            <section class="files">
-    
-                <div class="filesHead">
-                    <h5 class="filesTitle">My Files</h5>
-                    <button class="filesButton">+ Add New</button>
-                </div>
-                <div class="area">
-    
-                    <div class="platform">
-                        <div class="topPlatform">
-                            <img src="https://i.imgur.com/dEuCx4h.png" alt="">
-                            <i class="las la-ellipsis-v"></i>
-                        </div>
-                        <div class="bottomPlatform">
-                            <span class="name">Documents</span>
-                            <div class="progress">
-                                <div class="progress-value"></div>
-                            </div>
-                            <span class="amount">123 Files</span>
-                        </div>
-                    </div>
-    
-                    <div class="platform">
-                        <div class="topPlatform">
-                            <img src="https://i.imgur.com/nbO0Oca.png" alt="">
-                            <i class="las la-ellipsis-v"></i>
-                        </div>
-                        <div class="bottomPlatform">
-                            <span class="name">Images</span>
-                            <div class="progress">
-                                <div class="progress-value"></div>
-                            </div>
-                            <span class="amount">123 Files</span>
-                        </div>
-                    </div>
-    
-                    <div class="platform">
-                        <div class="topPlatform">
-                            <img src="https://i.imgur.com/SOfzIjE.png" alt="">
-                            <i class="las la-ellipsis-v"></i>
-                        </div>
-                        <div class="bottomPlatform">
-                            <span class="name">Audios</span>
-                            <div class="progress">
-                                <div class="progress-value"></div>
-                            </div>
-                            <span class="amount">123 Files</span>
-                        </div>
-                    </div>
-    
-                    <div class="platform">
-                        <div class="topPlatform">
-                            <img src="https://i.imgur.com/ZsnKreP.png" alt="">
-                            <i class="las la-ellipsis-v"></i>
-                        </div>
-                        <div class="bottomPlatform">
-                            <span class="name">Videos</span>
-                            <div class="progress">
-                                <div class="progress-value"></div>
-                            </div>
-                            <span class="amount">123 Files</span>
-                        </div>
-                    </div>
-    
+        <div class="ml-2.5 flex flex-col justify-center items-center lg:flex-row">
+
+            <section class="flex flex-col">
+                <!-------------------- FILES -------------------->
+                <div class="flex flex-row justify-around items-center text-xl my-5 gap-10 lg:justify-between">
+                    <h5 class="text-gray-300 font-bold">My Files</h5>
+                    <button class="border-0 rounded bg-blue-700 text-gray-300 text-base font-bold w-24 h-10 hover:text-gray-200 hover:bg-blue-600 hover:-translate-y-1 duration-300">+ Add New</button>
                 </div>
 
-                <div class="recent">
-                    <h5 class="">Recent files</h5>
-
-                    <div class="table">
-                        <div class="row head">
-                            <span>File name</span>
-                            <span>Date</span>
-                            <span>Size</span>
+                <div class="flex flex-wrap justify-center items-center font-bold text-gray-300 text-base gap-10 lg:flex-nowrap">
+    
+                    <div class="bg-zinc-800 text-gray-300 rounded w-44 h-40">
+                        <div class="flex flex-row justify-center text-xl items-center pt-5 gap-20">
+                            <img class="w-12 pl-3" src="https://i.imgur.com/dEuCx4h.png" alt="">
+                            <i class="las la-ellipsis-v cursor-pointer"></i>
                         </div>
-
-                        <div class="underline"></div>
-                        <div class="row file">
-                          <span>
-                              <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png" alt="">
-                              <span class="nameFile">Word File</span>
-                          </span>
-                          <span>15/11/2021</span>
-                          <span>1.2mb</span>
+                        <div class="font-bold flex flex-col justify-center gap-2.5 mt-2.5 ml-3.5">
+                            <span class="text-base">Documents</span>
+                            <div class="bg-zinc-900 rounded flex justify-start items-center p-px h-2 w-11/12">
+                                <div class="rounded bg-blue-700 h-2 w-1/2"></div>
+                            </div>
+                            <span class="text-base">123 Files</span>
                         </div>
-
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" alt="">
-                                <span class="nameFile">Excel File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-                        
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_power_point_office_logo_icon_145723.png" alt="">
-                                <span class="nameFile">Point File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-
-                        <div class="underline"></div>
-                        <div class="row file">
-                          <span>
-                              <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_onenote_logo_icon_145725.png" alt="">
-                              <span class="nameFile">Note File</span>
-                          </span>
-                          <span>15/11/2021</span>
-                          <span>1.2mb</span>
-                        </div>
-                        
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Project_%282019%E2%80%93present%29.svg/1200px-Microsoft_Project_%282019%E2%80%93present%29.svg.png" alt="">
-                                <span class="nameFile">Proje File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://admtransparencia.prodominicana.gob.do/Imagenes/Pdf.png" alt="">
-                                <span class="nameFile">PDFs File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-
-                        <div class="underline"></div>
-                        <div class="row file">
-                          <span>
-                              <img src="https://i.imgur.com/YRfrPDM.png" alt="">
-                              <span class="nameFile">Audio File</span>
-                          </span>
-                          <span>15/11/2021</span>
-                          <span>1.2mb</span>
-                        </div>
-
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://i.imgur.com/tXILn9K.png" alt="">
-                                <span class="nameFile">Image File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-                        
-                        <div class="underline"></div>
-                        <div class="row file">
-                            <span>
-                                <img src="https://i.imgur.com/yxgcXLa.png" alt="">
-                                <span class="nameFile">Video File</span>
-                            </span>
-                            <span>15/11/2021</span>
-                            <span>1.2mb</span>
-                        </div>
-
                     </div>
-                      
+
+                    <div class="platform bg-zinc-800 text-gray-300 rounded w-44 h-40 ">
+                        <div class="flex flex-row justify-center text-xl items-center pt-5 gap-20">
+                            <img class="w-12 pl-3" src="https://i.imgur.com/nbO0Oca.png" alt="">
+                            <i class="las la-ellipsis-v cursor-pointer"></i>
+                        </div>
+                        <div class="font-bold flex flex-col justify-center gap-2.5 mt-2.5 ml-3.5">
+                            <span class="text-base">Images</span>
+                            <div class="bg-zinc-900 rounded flex justify-start items-center p-px h-2 w-11/12">
+                                <div class="rounded bg-blue-700 h-2 w-1/2"></div>
+                            </div>
+                            <span class="text-base">123 Files</span>
+                        </div>
+                    </div>
+
+                    <div class="platform bg-zinc-800 text-gray-300 rounded w-44 h-40 ">
+                        <div class="flex flex-row justify-center text-xl items-center pt-5 gap-20">
+                            <img class="w-12 pl-3" src="https://i.imgur.com/SOfzIjE.png" alt="">
+                            <i class="las la-ellipsis-v cursor-pointer"></i>
+                        </div>
+                        <div class="font-bold flex flex-col justify-center gap-2.5 mt-2.5 ml-3.5">
+                            <span class="text-base">Audio</span>
+                            <div class="bg-zinc-900 rounded flex justify-start items-center p-px h-2 w-11/12">
+                                <div class="rounded bg-blue-700 h-2 w-1/2"></div>
+                            </div>
+                            <span class="text-base">123 Files</span>
+                        </div>
+                    </div>
+
+                    <div class="platform bg-zinc-800 text-gray-300 rounded w-44 h-40 ">
+                        <div class="flex flex-row justify-center text-xl items-center pt-5 gap-20">
+                            <img class="w-12 pl-3" src="https://i.imgur.com/ZsnKreP.png" alt="">
+                            <i class="las la-ellipsis-v cursor-pointer"></i>
+                        </div>
+                        <div class="font-bold flex flex-col justify-center gap-2.5 mt-2.5 ml-3.5">
+                            <span class="text-base">Videos</span>
+                            <div class="bg-zinc-900 rounded flex justify-start items-center p-px h-2 w-11/12">
+                                <div class="rounded bg-blue-700 h-2 w-1/2"></div>
+                            </div>
+                            <span class="text-base">123 Files</span>
+                        </div>
+                    </div>
                 </div>
-                
+
+                <!-------------------- TABLE -------------------->
+                <div class="flex flex-col gap-2.5 bg-zinc-800 text-gray-300 rounded mt-5 mb-5 p-5">
+                    <span class="text-base font-bold">Recent files</span>
+                    <table class="table-auto text-center text-sm w-full">
+                        <thead class="italic uppercase ">
+                          <tr>
+                            <th></th>
+                            <th>File Name</th>
+                            <th>Date</th>
+                            <th>Size</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png" alt=""></td>
+                            <td class="py-3.5 px-6">Word File</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr>
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" alt=""></td>
+                            <td class="py-3.5 px-6">Excel File</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr class="border-b border-gray-400">
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_power_point_office_logo_icon_145723.png" alt=""></td>
+                            <td class="py-3.5 px-6">Ppt File</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr>
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://admtransparencia.prodominicana.gob.do/Imagenes/Pdf.png" alt=""></td>
+                            <td class="py-3.5 px-6">PDF file</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr>
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://i.imgur.com/tXILn9K.png" alt=""></td>
+                            <td class="py-3.5 px-6">Image File</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr>
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://i.imgur.com/YRfrPDM.png" alt=""></td>
+                            <td class="py-3.5 px-6">Audio File</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr>
+                          <tr class="border-b border-gray-400">
+                            <td class="py-3.5 px-6"><img class="w-5" src="https://i.imgur.com/yxgcXLa.png" alt=""></td>
+                            <td class="py-3.5 px-6">Video File</td>
+                            <td class="py-3.5 px-6">15/11/2021</td>
+                            <td class="py-3.5 px-6">1.2mb</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                </div>
             </section>
-    
-            <section class="details">
-                <h5 class="">Store Details</h5>
+
+            <!-------------------- CHART SECTION -------------------->
+            <section class="bg-zinc-800 rounded w-4/3 h-1/2 m-5 mt-2.5 text-base text-center font-bold text-gray-300 lg:mt-14">
+                <h5 class="p-3">Store Details</h5>
                 <canvas id="chartDonut" class="chartDonut"></canvas>
 
-                <div class="detailsFile">
-                    <div>
-                        <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png">
-                        <span style="color: rgb(0, 114, 242)">Documents</span>
+                <div class="flex flex-row items-center justify-around bg-zinc-900 m-5 p-5 rounded">
+                    <div class="flex flex-row items-center text-blue-600">
+                        <img class="w-6 mr-2" src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_word_logo_icon_145724.png">
+                        <span>Documents</span>
                     </div>
-                    <span class="total">300</span>
+                    <span>300</span>
                 </div>
 
-                <div class="detailsFile">
-                    <div>
-                        <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png">
-                        <span style="color: rgb(24, 136, 57)">SpreedSheets</span>
+                <div class="detailsFile flex flex-row items-center justify-around bg-zinc-900 m-5 p-5 rounded">
+                    <div class="flex flex-row items-center text-green-600">
+                        <img class="w-6 mr-2" src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png">
+                        <span>SpreedSheets</span>
                     </div>
-                    <span class="total">50</span>
+                    <span>50</span>
                 </div>
 
-                <div class="detailsFile">
-                    <div>
-                        <img src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_power_point_office_logo_icon_145723.png">
-                        <span style="color: rgb(255, 188, 1)">Presentations</span>
+                <div class="detailsFile flex flex-row items-center justify-around bg-zinc-900 m-5 p-5 rounded">
+                    <div class="flex flex-row items-center text-orange-600">
+                        <img class="w-6 mr-2" src="https://cdn.icon-icons.com/icons2/2397/PNG/512/microsoft_power_point_office_logo_icon_145723.png">
+                        <span>Presentations</span>
                     </div>
-                    <span class="total">100</span>
+                    <span>100</span>
                 </div>
 
             </section>
-        </div>
 
+        </div>
     </main>
 
     <script src="./script.js"></script>

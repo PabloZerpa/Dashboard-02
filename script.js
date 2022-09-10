@@ -1,3 +1,11 @@
+let btn = document.getElementById("check");
+let responsiveNav = document.getElementById("responsiveNav");
+
+btn.addEventListener("change", function()
+{
+  responsiveNav.classList.toggle('hidden');
+})
+
 const dataStorage = {
     labels: [
       'Documents',
