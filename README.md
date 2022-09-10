@@ -1,5 +1,5 @@
 # Dashboard
-## Url: https://github.com/PabloZerpa/Dashboard-02
+## Url: https://pablozerpa.github.io/Dashboard-02/
 
 # Screenshot
 ![](./dashboard.png)
